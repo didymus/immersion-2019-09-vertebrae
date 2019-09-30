@@ -102,6 +102,10 @@ var Message = Backbone.Model.extend({
      */
 
     // this.on(YOUR CODE HERE);
+    console.log('Initialized: ', this);
+    this.on('change', function(){
+      renderSomethingOnThePage(this.get('message'));
+    });
 
     /* It is your turn to write the event handler.
      *
@@ -141,7 +145,7 @@ var Message = Backbone.Model.extend({
 var myNewMessage = new Message();
 
 // ...and then make a change on that model to see it render
-myNewMessage.set({ message: 'someMessage' });
+myNewMessage.set({ message: '*REDACTED*' });
 
 
 /* Once the model is rendering on the `change` event, move on to step 3!
